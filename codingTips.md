@@ -1,6 +1,12 @@
 # Approaching a problem
 http://www.crackingthecodinginterview.com/uploads/6/5/2/8/6528028/cracking_the_coding_skills_-_v6.pdf
 
+## Problem Solving Constraints
+When a problem is given to you,
+* For string problems, check for empty strings, white spaces, case sensitiveness, UTF charset 128 or 256, special characters.
+* Check if array is sorted, has duplicate values, # of times duplicates matter or not, empty arrays.
+* For numbers, if number can be greater than 2^31, negative numbers allowed or not
+
 # Data Structures
 
 ## Array
