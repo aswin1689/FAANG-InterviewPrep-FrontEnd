@@ -13,6 +13,7 @@ When a problem is given to you,
 ## Linked List
 * Slow and Fast pointer - is list circular / has loop,
 * Two pointer - delete nth node from list,
+* If you don't know length of linked list and to go to center of the list, use Slow and fast pointers.
 
 ## Array
 * Two pointer technique - move zeroes, 
