@@ -6,7 +6,7 @@ When a problem is given to you,
 * For string problems, check for empty strings, white spaces, case sensitiveness, unique values, UTF charset 128 or 256, special characters.
 * Check if array is sorted, has duplicate values, # of times duplicates matter or not, empty arrays.
 * For numbers, if number can be greater than 2^31, negative numbers allowed or not.
-* For linked lists, duplicate nodes exist or not, has atleast one node.
+* For linked lists, duplicate nodes exist or not, has atleast two nodes, ask if n is always valid,
 
 # Data Structures
 
