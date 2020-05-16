@@ -11,9 +11,9 @@ When a problem is given to you,
 # Patterns
 
 ## Linked List
-* Slow and Fast pointer - is list circular / has loop,
+* Slow and Fast pointer - is list circular / has loop, is list palindrome
 * Two pointer - delete nth node from list,
-* If you don't know length of linked list and to go to center of the list, use Slow and fast pointers.
+* If the length of linked list is unknown and if we need to traverse to the center of the list, use Slow and fast pointers.
 
 ## Array
 * Two pointer technique - move zeroes, 
