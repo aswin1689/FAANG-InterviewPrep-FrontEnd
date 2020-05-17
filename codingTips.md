@@ -89,12 +89,12 @@ if (typeof foo !== 'undefined' ) {
 ```
 * To create a circular loop of n elements, when you are at the last element with index i, do ```(i+1)%n```
 
-##Map
+## Map
 * Map maintains insertion order while iterating. 
 * ```console.log(map.values().next()) // outputs { value: 2, done: false }```
 * ```map.values().next().value : -1 // this is how to access first value in Map ```
 
-##Set
+## Set
 
 # Useful Links
 * https://medium.com/dailyjs/cribsheet-for-javascript-coding-interview-f6327a69a6b7
