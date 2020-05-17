@@ -18,3 +18,6 @@ When a problem is given to you,
 ## Array
 * Two pointer technique - move zeroes, 
 * Try reversing and transposing 2D matrix for rotating or any problem as an option.
+
+## String
+* Two pointer technique - palindrome
