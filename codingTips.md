@@ -12,7 +12,7 @@ console.log(indices); -> (10) [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```javascript
 Math.floor(array.length * Math.random())
 ```
-* In a sudoku, if we want 3x3 grid index 
+* In a sudoku, if we want index of 3x3 sub grid assuming index of sub grids is 0, 1, 2....7, 8
 ```javascript
 Math.floor(i/3)+(Math.floor(j/3)*3);
 ```
@@ -36,6 +36,15 @@ then to find pivot of this subarray, or just to find a middle element in array, 
 * If string is “abcdef”, shift left of 2 is “cdefab”. Shift right of (str.length-2) = 4 is “cdefab”. So, shift right is same as ```str.length + shift left```.
 * Remember that I can use two pointers (e.g., to get the midpoint by having one pointer go twice as fast, or in a sum problem by having the pointers work inward from either end, or to test if a string is a palindrome).
 * If you have a lot of strings, try putting them in a prefix tree / trie.
+* To clean the input string e.g., in palindrome problem, to remove special chars and spaces, use regex. [regex tutorial](https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285), [regex tester](https://regex101.com/)
+```
+const regex = /\W/gm; //replace non alphanumeric character and not underscore with ''
+const cleaned = [...str.toLowerCase().replace(regex, '')];
+```
+or, equivalent of above
+```
+s = s.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
+```
 
 ## Linked List
 
