@@ -30,6 +30,7 @@ for(let i = 0, rowLength = matrix.length; i < rowLength; i++) {
 * To select the middle element of array for subarrays like if array is of length 12 and you are working on subarray from indexes 7 to 12 in case of quick sort, 
 then to find pivot of this subarray, or just to find a middle element in array, you do 
 ```arr[Math.floor((lowIndex + highIndex) / 2)]```
+* Name variables appropriately and readable. Instead of i and j, for 2 pointer technique, use **start** and **end**. For Binary search use **low**, **mid** and **high**.
 
 ## String
 
