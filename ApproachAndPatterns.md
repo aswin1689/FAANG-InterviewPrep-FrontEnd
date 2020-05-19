@@ -1,5 +1,5 @@
 # Approaching a problem
-http://www.crackingthecodinginterview.com/uploads/6/5/2/8/6528028/cracking_the_coding_skills_-_v6.pdf
+[Steps by CTCI](http://www.crackingthecodinginterview.com/uploads/6/5/2/8/6528028/cracking_the_coding_skills_-_v6.pdf)
 
 ## Problem Solving Constraints
 When a problem is given to you,
@@ -21,3 +21,9 @@ When a problem is given to you,
 
 ## String
 * Two pointer technique - palindrome
+
+## Dynamic Programming
+* https://leetcode.com/discuss/general-discussion/458695/Dynamic-Programming-Patterns
+
+## Tree
+* https://leetcode.com/articles/a-recursive-approach-to-segment-trees-range-sum-queries-lazy-propagation/#
