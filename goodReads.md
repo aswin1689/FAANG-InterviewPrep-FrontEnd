@@ -4,6 +4,7 @@
 * [By jwasham](https://github.com/jwasham/coding-interview-university)
 * [500 DSA questions & answers](https://www.quora.com/q/techiedelight/500-Data-Structures-and-Algorithms-interview-questions-and-their-solutions)
 * [Facebook Geeks4Geeks](https://www.geeksforgeeks.org/facebook-interview-preparation/)
+* [50 problems by Dev.to](https://dev.to/javinpaul/50-data-structure-and-algorithms-problems-from-coding-interviews-4lh2)
 
 
 # Data Structures
