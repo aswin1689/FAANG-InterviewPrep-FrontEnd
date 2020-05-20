@@ -2,11 +2,17 @@
 [Steps by CTCI](http://www.crackingthecodinginterview.com/uploads/6/5/2/8/6528028/cracking_the_coding_skills_-_v6.pdf)
 
 ## Problem Solving Constraints
+
+### Inputs
 When a problem is given to you,
 * For String problems, check for empty strings, white spaces, case sensitiveness, unique values, UTF charset 128 or 256, special characters.
 * For Arrays, check if array is sorted, has duplicate values, # of times duplicates matter or not, has -ve values empty arrays.
 * For Numbers, if number can be greater than 2^31, negative numbers allowed or not.
 * For Linked lists, duplicate nodes exist or not, has atleast two nodes, ask if n is always valid,
+* For Trees, if BST, can there be nodes with same value
+
+### Outputs
+* check what should be returned by the algorithm. Is it indexes, arrays or just length of arrays?
 
 # Patterns
 
