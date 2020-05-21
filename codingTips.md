@@ -52,20 +52,33 @@ s = s.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
 ## Hashmap
 
 ## Stack
+* Use array as Stack. **push** and **pop** methods.
 
 ## Queue
+* Use array as Queue. **push** for enqueue and **shift** for dequeue.
 
 ## Tree
 * In Binary Search Tree, some times we might need to compare the node's value against lower and upper bounds and not the left and right child values. e.g., valide BST. Here left child's value of node in right sub tree should not only be smaller than parent node but also must be greater than root's value. 
+* The number of recursive calls is bound by the height of the tree. In the worst case, the tree is linear and the height is in ```O(n)```. Therefore, space complexity due to recursive calls on the stack is ```O(n)``` in the worst case.
 * For DFS, use Stack and for BFS, use Queue.
 * Iterative means BFS and Recursive means DFS.
+* In BFS, when using queue, if you want the length of each level, declare a second variable that holds the size of that level and decrement the variable on each iteration. 
 * If the problem involves parsing or tree/graph traversal (or reversal in some way), consider using a stack.
 
 ## Graph
 
 ## Trie
 
-# General
+## Search
+
+* Use binary search to find pivot element.
+
+## Sort
+* Merge Sort
+
+## Dynamic Programming
+
+# JavaScript
 * The following function returns a random number between min (inclusive) and max (exclusive):
 ```javascript
 function getRandomNumber(min, max) {
@@ -91,6 +104,15 @@ if (typeof foo !== 'undefined' ) {
 ```
 * To create a circular loop of n elements, when you are at the last element with index i, do ```(i+1)%n```
 
+* To initialize multiple variable in single statement,
+```javascript
+let a = 1, b = 2;
+```
+* The **continue** statement terminates execution of the statements in the current iteration of the current or labeled loop, and continues execution of the loop with the next iteration.
+* In contrast to the **break** statement, continue does not terminate the execution of the loop entirely: instead,
+    * In a ```while``` loop, it jumps back to the condition.
+    * In a ```for``` loop, it jumps to the update expression.
+
 ## Map
 * Map maintains insertion order while iterating. 
 * ```console.log(map.values().next()) // outputs { value: 2, done: false }```
@@ -100,15 +122,3 @@ if (typeof foo !== 'undefined' ) {
 
 # Useful Links
 * https://medium.com/dailyjs/cribsheet-for-javascript-coding-interview-f6327a69a6b7
-
-## Search
-
-* Use binary search to find pivot element.
-
-## Sort
-* Merge Sort
-
-
-## Dynamic Programming
-
-
