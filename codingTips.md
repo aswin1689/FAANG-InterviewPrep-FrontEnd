@@ -57,7 +57,8 @@ s = s.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
 
 ## Tree
 * In Binary Search Tree, some times we might need to compare the node's value against lower and upper bounds and not the left and right child values. e.g., valide BST. Here left child's value of node in right sub tree should not only be smaller than parent node but also must be greater than root's value. 
-
+* For DFS, use Stack and for BFS, use Queue.
+* Iterative means BFS and Recursive means DFS.
 * If the problem involves parsing or tree/graph traversal (or reversal in some way), consider using a stack.
 
 ## Graph
