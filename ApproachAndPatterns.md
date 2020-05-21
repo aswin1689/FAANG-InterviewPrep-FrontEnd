@@ -32,4 +32,5 @@ When a problem is given to you,
 * https://leetcode.com/discuss/general-discussion/458695/Dynamic-Programming-Patterns
 
 ## Tree
+* Trial with all approaches you can think of if you don't know how to start/given an unknown problem. For example, check with stack, queue, BFS, DFS, pre-order, in-order, post-order, reverse pre-order, range sum queries, upper and lower bounds.
 * https://leetcode.com/articles/a-recursive-approach-to-segment-trees-range-sum-queries-lazy-propagation/#
