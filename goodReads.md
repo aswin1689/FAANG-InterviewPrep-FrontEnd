@@ -14,6 +14,8 @@
 * [Merge K-sorted Arrays](https://medium.com/outco/how-to-merge-k-sorted-arrays-c35d87aa298e)
 
 # Algorithms
+* [Khan Academy Algorithms](https://www.khanacademy.org/computing/computer-science/algorithms)
+* [Princeton Algorithms by Sedgewick](https://algs4.cs.princeton.edu/home/)
 
 ## DFS
 * https://www.freecodecamp.org/news/dfs-for-your-next-tech-giant-interview/
