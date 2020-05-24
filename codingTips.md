@@ -27,10 +27,17 @@ for(let i = 0, rowLength = matrix.length; i < rowLength; i++) {
 * Convert Set object to an Array object. ```let myArr = Array.from(mySet)```
 * Intersect can be simulated via ```let intersection = new Set([...set1].filter(x => set2.has(x)))```
 * Difference can be simulated via ```let difference = new Set([...set1].filter(x => !set2.has(x)))```
-* To select the middle element of array for subarrays like if array is of length 12 and you are working on subarray from indexes 7 to 12 in case of quick sort, 
-then to find pivot of this subarray, or just to find a middle element in array, you do 
-```arr[Math.floor((lowIndex + highIndex) / 2)]```
+* Use ```start + Math.floor((end-start)/2)``` to calculate mid-point of an array. It won't overflow if *start* and *end* are large positive numbers. Works even if you are using pointers. It will never overflow as long as ```end >= start```. Don't use ```(start+end)/2``` as it might overflow.
 * Name variables appropriately and readable. Instead of i and j, for 2 pointer technique, use **start** and **end**. For Binary search use **start**, **mid** and **end**.
+* If you have a situation to check current and previous element in a for loop, you can do this still looping for 0 index:
+```javascript
+for(let i = 0, len = arr.length; i < len; i++) {
+  if(i === 0 || arr[i] > arr[i-1]) {
+    ...
+  }
+  ...
+}
+```
 
 ## String
 
@@ -72,7 +79,6 @@ s = s.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
 ## Search
 
 * Tip to quickly prove the correctness of your binary search algorithm during an interview. We just need to test an input of size 2. Check if it reduces the search space to a single element (which must be the answer). If not, your algorithm will never terminate.
-* Use ```start + Math.floor((end-start)/2)``` to calculate mid-point of an array. It won't overflow if *start* and *end* are large positive numbers. Works even if you are using pointers. It will never overflow as long as ```end >= start```. Don't use ```(start+end)/2``` as it might overflow.
 
 ## Sort
 * Merge Sort
