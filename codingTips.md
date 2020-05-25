@@ -124,6 +124,10 @@ let a = 1, b = 2;
 * Map maintains insertion order while iterating. 
 * ```console.log(map.values().next()) // outputs { value: 2, done: false }```
 * ```map.values().next().value : -1 // this is how to access first value in Map ```
+* While looping a Map, the callback has val, key and map in this order.
+```javascript
+map.forEach((val, key, map) => {...})
+```
 
 ## Set
 
