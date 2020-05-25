@@ -53,6 +53,12 @@ or, equivalent of above
 ```javascript
 s = s.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
 ```
+* If we know that the charset is rather small, we can replace the Map with an integer array as direct access table. Commonly used tables are:
+```javascript
+    int[26] for Letters 'a' - 'z' or 'A' - 'Z'
+    int[128] for ASCII
+    int[256] for Extended ASCII
+```
 
 ## Linked List
 
