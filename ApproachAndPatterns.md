@@ -25,7 +25,7 @@ When a problem is given to you,
 * Try to use more pointers if asked to solve in place. e.g., move odd-even lists.
 
 ## Array
-* Two pointer technique - move zeroes, 
+* Two pointer technique - move zeroes, reverse String (two pointer is less buggy because you don't have to consider odd and even length string scenario.)
 * Try reversing and transposing 2D matrix for rotating or any problem as an option.
 
 ## String
