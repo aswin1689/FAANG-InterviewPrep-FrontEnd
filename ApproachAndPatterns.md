@@ -21,6 +21,8 @@ When a problem is given to you,
 * Slow and Fast pointer - is list circular / has loop, is list palindrome
 * Two pointer - delete nth node from list,
 * If the length of linked list is unknown and if we need to traverse to the center of the list, use Slow and fast pointers.
+* Dummy node.
+* Try to use more pointers if asked to solve in place. e.g., move odd-even lists.
 
 ## Array
 * Two pointer technique - move zeroes, 
