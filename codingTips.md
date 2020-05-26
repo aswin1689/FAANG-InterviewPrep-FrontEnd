@@ -2,6 +2,10 @@
 
 ## Array
 
+* To create an array of size 10 and initialize with -1, use 
+```javascript
+Array(10).fill(-1)
+```
 * If you just want to return the last element of the array without mutating the original array, we can use ```arr.slice(-1)```
 * Generating a sequence 
 ```javascript
