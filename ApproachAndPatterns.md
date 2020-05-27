@@ -1,6 +1,9 @@
 # Approaching a problem
 [Steps by CTCI](http://www.crackingthecodinginterview.com/uploads/6/5/2/8/6528028/cracking_the_coding_skills_-_v6.pdf)
 
+## Coding signals
+[How your interviewer evaluates you](https://yangshun.github.io/tech-interview-handbook/coding-signals)
+
 ## Problem Solving Constraints
 
 ### Inputs
