@@ -50,3 +50,8 @@ When a problem is given to you,
 
 ## Tree
 * https://leetcode.com/articles/a-recursive-approach-to-segment-trees-range-sum-queries-lazy-propagation/#
+
+## Trie
+* Common data structures for looking up strings efficiently are
+  * Trie/Prefix Tree
+  * Suffix Tree
