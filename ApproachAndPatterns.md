@@ -24,7 +24,11 @@ When a problem is given to you,
 * Slow and Fast pointer - is list circular / has loop, is list palindrome
 * Two pointer - delete nth node from list,
 * If the length of linked list is unknown and if we need to traverse to the center of the list, use Slow and fast pointers.
-* Dummy node.
+* Adding a dummy node at the head and /or tail might help to handle many edge cases where operations have to be performed at the head or the tail. The presence of dummy nodes ensures that operations will never have be executed on the head or the tail. Dummy nodes remove the headache of writing conditional checks to deal with null pointers. Be sure to remove them at the end of the operation.
+* Sometimes linked lists problem can be solved without additional storage. Try to borrow ideas from the for reverse a linked list problem.
+* For deletion in linked lists, you can either modify the node values or change the node pointers. You might need to keep a reference to the previous element.
+* For partitioning linked lists, create two separate linked lists and join them back together.
+* Linked lists problems share similarities with array problems. Think about how you would solve an array problem and apply it to a linked list.
 * Try to use more pointers if asked to solve in place. e.g., move odd-even lists.
 
 ## Array
@@ -34,8 +38,15 @@ When a problem is given to you,
 ## String
 * Two pointer technique - palindrome
 
+## Recursion
+* Recursion implicitly uses a stack. Hence all recursive approaches can be rewritten iteratively using a stack. Beware of cases where the recursion level goes too deep and causes a stack overflow.
+* Recursion will never be O(1) space complexity because a stack is involved, unless there is tail call optimization (TCO).
+
 ## Dynamic Programming
 * https://leetcode.com/discuss/general-discussion/458695/Dynamic-Programming-Patterns
+* A matrix is a 2-dimensional array. Questions involving matrices are usually related to dynamic programming or graph traversal.
+* For questions involving traversal or dynamic programming, make a copy of the matrix with the same dimensions that are initialized to empty values. Use these values to store the visited state or dynamic programming table. 
+* Many grid-based games can be modeled as a matrix. For example, Tic-Tac-Toe, Sudoku, Crossword, Connect 4, and Battleship. It is not uncommon to be asked to verify the winning condition of the game. For games like Tic-Tac-Toe, Connect 4, and Crosswords, verification has to be done vertically and horizontally. One trick is to write code to verify the matrix for the horizontal cells. Then transpose the matrix, reusing the logic used for horizontal verification to verify originally vertical cells (which are now horizontal).
 
 ## Tree
 * https://leetcode.com/articles/a-recursive-approach-to-segment-trees-range-sum-queries-lazy-propagation/#
