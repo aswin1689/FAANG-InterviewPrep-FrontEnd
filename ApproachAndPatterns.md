@@ -37,6 +37,9 @@ When a problem is given to you,
 
 ## String
 * Two pointer technique - palindrome
+* If the order of characters within the string matters, so HashMaps are usually not helpful.
+* When a question is about counting the number of palindromes, a common trick is to have two pointers that move outward, away from the middle. Note that palindromes can be even or odd length. For each middle pivot position, you need to check it twice: Once that includes the character and once without the character.
+* For substrings, you can terminate early once there is no match. For subsequences, use dynamic programming as there are overlapping subproblems. 
 
 ## Recursion
 * Recursion implicitly uses a stack. Hence all recursive approaches can be rewritten iteratively using a stack. Beware of cases where the recursion level goes too deep and causes a stack overflow.
@@ -50,8 +53,16 @@ When a problem is given to you,
 
 ## Tree
 * https://leetcode.com/articles/a-recursive-approach-to-segment-trees-range-sum-queries-lazy-propagation/#
+* In-order traversal of a binary tree is insufficient to uniquely serialize a tree. Pre-order or post-order traversal is also required.
+* When a question involves a BST, the interviewer is usually looking for a solution which runs faster than O(n).
 
 ## Trie
 * Common data structures for looking up strings efficiently are
   * Trie/Prefix Tree
   * Suffix Tree
+* Tries are special trees (prefix trees) that make searching and storing strings more efficient. Tries have many practical applications, such as conducting searches and providing autocomplete. It is helpful to know these common applications so that you can easily identify when a problem can be efficiently solved using a trie.
+* Sometimes preprocessing a dictionary of words (given in a list) into a trie, will improve the efficiency of searching for a word of length k, among n words. Searching becomes O(k) instead of O(n).
+
+## Heap
+* If you see a top or lowest k mentioned in the question, it is usually a sign that a heap can be used to solve the problem.
+* If you require the top k elements, use a Min Heap of size k. Iterate through each element, pushing it into the heap. Whenever the heap size exceeds k, remove the minimum element. That will guarantee that you have the k largest elements.
