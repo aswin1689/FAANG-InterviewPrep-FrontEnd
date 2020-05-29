@@ -8,7 +8,8 @@
 
 
 # Data Structures
-[DS Algo Big O cheatsheet](https://algs4.cs.princeton.edu/cheatsheet/)
+* [DS Algo Big O cheatsheet](https://algs4.cs.princeton.edu/cheatsheet/)
+* [DS by Vaidehi Joshi](https://medium.com/basecs/tagged/data-structures)
 
 ## Array
 * [Merge K-sorted Arrays](https://medium.com/outco/how-to-merge-k-sorted-arrays-c35d87aa298e)
