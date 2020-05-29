@@ -21,10 +21,12 @@
 * https://www.freecodecamp.org/news/dfs-for-your-next-tech-giant-interview/
 
 # Web
-* [Facebook Redesign](https://engineering.fb.com/web/facebook-redesign/ )
+* [Facebook Redesign](https://engineering.fb.com/web/facebook-redesign/)
+* [Web.dev](https://web.dev/learn/)
 
 # JavaScript
 * https://medium.com/better-programming/5-front-end-interview-coding-challenges-6cd9f31d1169
 * [Design Patterns](https://github.com/sohamkamani/javascript-design-patterns-for-humans)
 * [Event Loop](https://www.youtube.com/watch?v=cCOL7MC4Pl0)
 * [JS 1 Liners](https://1loc.dev/)
+* [Good Blog](https://dmitripavlutin.com/javascript-modules-best-practices/)
