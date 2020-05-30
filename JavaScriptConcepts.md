@@ -46,6 +46,18 @@
 * It uses the observable to detect state and prop changes.
 * React uses an efficient diff algorithm to compare the versions of virtual DOM.
 * It then makes sure that batched updates are sent to the real DOM for repainting or re-rendering of the UI.
+* Good way to append multiple DOM elements as children is by using `createDocumentFragment` method as shown below.
+```javascript
+let a = document.createElement('a');
+let container = document.querySelector('.container');
+let documentFragment = document.createDocumentFragment();
+for (let i = 0; i < 1000; i++) {
+    let cloneA = a.cloneNode(true);
+    cloneA.text = `Row N° ${i}`;
+    documentFragment.appendChild(cloneA);
+}
+container.appendChild(documentFragment);
+```
 
 ## Variables
 * `window` and `document`, for example, are global variables supplied by the browser. In a Node environment, you can access `process` object as a global variable. 
@@ -71,7 +83,8 @@ string.includes(substring, [fromIndex])
 The method returns a boolean that indicates if substring is a substring of string, optionally starting from an index `fromIndex`. 
 
 ## Objects
-* `Object.assign()` function from ES2015 is designed to implement this requirement. Native, tested and standardized solution. 
+* `Object.assign()` function from ES2015 is designed to implement this requirement. Native, tested and standardized solution.
+* Use `Number.isNaN` function to check for a number.
 
 ## Functions
 * Regular functions can be invoked in 4 ways.
