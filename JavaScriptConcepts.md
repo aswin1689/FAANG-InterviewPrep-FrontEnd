@@ -1,5 +1,52 @@
 # JavaScript
 
+## DOM
+* DOM manipulation is expensive. If your application is big or very dynamic, the time spent in manipulating DOM elements rapidly adds up and you hit a performance bottleneck.
+* Angular solved it by **dirty model checking** by updating the DOM only when model changes. It still has problems. The static text eg., p tag is updated every time the model is changed when they have same ancestor which is unneccessary. So, the solution is to add another layer between DOM and the HTML template called **Virtual DOM** proposed by React. 
+* Virtual DOM is an in-memory representation of the actual elements that are being created for your page.
+```html
+<div>
+  <div id="header">
+    <h1>Hello, {{state.subject}}!</h1>
+    <p>How are you today?</p>
+  </div>
+</div>
+```
+* The above HTML is represented in DOM as below
+```javascript
+{
+  tag: 'div',
+  children: [
+    {
+      tag: 'div',
+      attributes: {
+        id: 'header'
+      },
+      children: [
+        {
+          tag: 'h1',
+          children: 'Hello, World!'
+        },
+        {
+          tag: 'p',
+          children: 'How are you today?'
+        }
+      ]
+    }
+  ]
+}
+```
+* If the `subject` changes here from `Hello, World!` to `Hello, mom!` then only `h1` tag is surgically updated without updating the whole DOM.
+* The repainting of the UI is the most expensive part, and React efficiently ensures that the real DOM receives only batched updates to repaint the UI.
+* Frequent DOM manipulations are expensive and performance heavy.
+* Virtual DOM is a virtual representation of the real DOM.
+* When state changes occur, the virtual DOM is updated and the previous and current version of virtual DOM is compared. This is called “diffing”.
+* The virtual DOM then sends a batch update to the real DOM to update the UI.
+* React uses virtual DOM to enhance its performance.
+* It uses the observable to detect state and prop changes.
+* React uses an efficient diff algorithm to compare the versions of virtual DOM.
+* It then makes sure that batched updates are sent to the real DOM for repainting or re-rendering of the UI.
+
 ## Variables
 * `window` and `document`, for example, are global variables supplied by the browser. In a Node environment, you can access `process` object as a global variable. 
 
