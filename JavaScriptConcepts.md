@@ -59,6 +59,98 @@ for (let i = 0; i < 1000; i++) {
 container.appendChild(documentFragment);
 ```
 
+## Memory
+* Using a SPA implies staying on the same page for a much longer time. If the page that is never fully reloaded starts progressively using more and more memory, that can seriously affect the performance and even cause the browser's tab to crash.
+* Causes of memory leaks
+  * accidental global variables
+    * use strict mode to prevent
+  * closures - Closures are an unavoidable and an integral part of JavaScript, so it is important to:
+      * understand when the closure has been created and what objects are retained by it,
+      * understand closure's expected lifespan and usage (especially if used as a callback).
+  * Having a setTimeout or a setInterval referencing some object in the callback is the most common way of preventing the object from being garbage collected.
+    * being aware of the objects referenced from the timer's callback,
+    * using the handle returned from the timer to cancel it when necessary.
+  * event listeners
+    * unregister the event listener once no longer needed, by creating a reference pointing to it and passing it to removeEventListener(). 
+    * addEventListener() can take a third parameter, which is an object providing additional options. Given that {once: true} is passed as a third parameter to addEventListener(), the listener function will be automatically removed after handling the event once. 
+  * Cache - It can grow indefinitely if we don't clear the cache once the associated object is deleted. In the example below, the user object is still in cache after it has been deleted from memory.
+```javascript
+let user_1 = { name: "Peter", id: 12345 };
+const mapCache = new Map();
+
+function cache(obj){
+    if (!mapCache.has(obj)){
+        const value = `${obj.name} has an id of ${obj.id}`;
+        mapCache.set(obj, value);
+
+        return [value, 'computed'];
+    }
+
+    return [mapCache.get(obj), 'cached'];
+}
+
+cache(user_1); // ['Peter has an id of 12345', 'computed']
+user_1 = null; // removing the inactive user
+
+//Garbage Collector
+console.log(mapCache); // ((…) => "Peter has an id of 12345")) // user1 entry is still in cache
+```
+To work around this issue, we can use WeakMap. It is a data structure with weakly held key references which accepts only objects as keys. If we use an object as the key, and it is the only reference to that object – the associated entry will be removed from cache and garbage collected. In the following example, after nulling the user_1 object, the associated entry gets automatically deleted from the WeakMap after the next garbage collection. 
+```javascript
+let user_1 = { name: "Peter", id: 12345 };
+const weakMapCache = new WeakMap();
+
+function cache(obj){
+    // ...same as above, but with weakMapCache
+    return [weakMapCache.get(obj), 'cached'];
+}
+cache(user_1); // ['Peter has an id of 12345', 'computed']
+console.log(weakMapCache); // ((…) => "Peter has an id of 12345"}
+user_1 = null; // removing the inactive user
+
+// Garbage Collector
+console.log(weakMapCache); // ((…) => {}) - first entry gets garbage collected
+```
+* Detached DOM elements - If a DOM node has direct references from JavaScript, it will prevent it from being garbage collected, even after the node is removed from the DOM tree. 
+
+```javascript
+  function createElement() {
+    const div = document.createElement('div');
+    div.id = 'detached';
+    return div;
+  }
+
+  // this will keep referencing the DOM element even after deleteElement() is called
+  const detachedDiv = createElement();
+
+  document.body.appendChild(detachedDiv);
+
+  function deleteElement() {
+      document.body.removeChild(document.getElementById('detached'));
+  }
+
+  deleteElement(); // Heap snapshot will show detached div#detached
+```
+* One of the possible solutions is to move DOM references into the local scope.
+
+```javascript
+  function createElement() {...} // same as above
+
+  // DOM references are inside the function scope
+
+  function appendElement() {
+      const detachedDiv = createElement();
+      document.body.appendChild(detachedDiv);
+  }
+
+  appendElement();
+
+  function deleteElement() {
+       document.body.removeChild(document.getElementById('detached'));
+  }
+
+  deleteElement(); // no detached div#detached elements in the Heap Snapshot
+```
 ## Variables
 * `window` and `document`, for example, are global variables supplied by the browser. In a Node environment, you can access `process` object as a global variable. 
 
