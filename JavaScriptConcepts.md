@@ -59,6 +59,11 @@ for (let i = 0; i < 1000; i++) {
 container.appendChild(documentFragment);
 ```
 
+## Web
+
+### Single Page Application(SPA)
+* Earlier, when client requests the server for a page, it is sent from server. When user clicks any link on that page, a new page from server is sent back to the client. So, we see a whole page refresh. With a SPA, we only make AJAX requests and send JSON back to the client without page refresh. SPA uses history API for routing. 
+
 ## Memory
 * Using a SPA implies staying on the same page for a much longer time. If the page that is never fully reloaded starts progressively using more and more memory, that can seriously affect the performance and even cause the browser's tab to crash.
 * Causes of memory leaks
@@ -151,6 +156,7 @@ console.log(weakMapCache); // ((…) => {}) - first entry gets garbage collected
 
   deleteElement(); // no detached div#detached elements in the Heap Snapshot
 ```
+
 ## Variables
 * `window` and `document`, for example, are global variables supplied by the browser. In a Node environment, you can access `process` object as a global variable. 
 
