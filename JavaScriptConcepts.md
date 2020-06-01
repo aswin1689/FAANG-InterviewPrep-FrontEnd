@@ -183,6 +183,7 @@ The method returns a boolean that indicates if substring is a substring of strin
 ## Objects
 * `Object.assign()` function from ES2015 is designed to implement this requirement. Native, tested and standardized solution.
 * Use `Number.isNaN` function to check for a number.
+* Object only supports one object as a key. If you want to use multiple keys as objects, use `Map`.
 
 ## Functions
 * Regular functions can be invoked in 4 ways.
