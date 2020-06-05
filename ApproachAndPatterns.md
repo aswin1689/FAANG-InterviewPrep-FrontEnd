@@ -56,6 +56,9 @@ When a problem is given to you,
 * In-order traversal of a binary tree is insufficient to uniquely serialize a tree. Pre-order or post-order traversal is also required.
 * When a question involves a BST, the interviewer is usually looking for a solution which runs faster than O(n).
 
+## BFS
+* Try to implement the solution incrementally when generating combinations problems. e.g., phone letter pad combinations, generate parentheses.
+
 ## Trie
 * Common data structures for looking up strings efficiently are
   * Trie/Prefix Tree
