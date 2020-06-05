@@ -190,6 +190,18 @@ string.includes(substring, [fromIndex])
 ```
 The method returns a boolean that indicates if substring is a substring of string, optionally starting from an index `fromIndex`. 
 
+## Functions
+* Regular functions can be invoked in 4 ways.
+  * simple invocation
+  * method invocation - object method
+  * indirect invocation - call, apply
+  * constructor invocation
+* pass optional parameters for `null` or `undefined` values. Without considerable amount of refactoring, but for a considerable code readability arguments object should be migrated to rest parameters. 
+* The arrow function allows efficiently to bind `this` lexically. It uses the enclosing context and does not define its own `this`.
+* Arrow functions don't have `this`, `arguments`. So, it cannot be used for object methods, constructor functions.
+
+# OOPS
+
 ## Objects
 * `Object.assign()` function from ES2015 is designed to implement this requirement. Native, tested and standardized solution.
 * Use `Number.isNaN` function to check for a number.
@@ -200,13 +212,32 @@ function isObject (value) {
 return value && typeof value === 'object' && value.constructor === Object;
 }
 ```
+## Class
+* You can use getters and setters to get and set values in a class like below: 
+```javascript
+class User {
 
-## Functions
-* Regular functions can be invoked in 4 ways.
-  * simple invocation
-  * method invocation - object method
-  * indirect invocation - call, apply
-  * constructor invocation
-* pass optional parameters for `null` or `undefined` values. Without considerable amount of refactoring, but for a considerable code readability arguments object should be migrated to rest parameters. 
-* The arrow function allows efficiently to bind `this` lexically. It uses the enclosing context and does not define its own `this`.
-* Arrow functions don't have `this`, `arguments`. So, it cannot be used for object methods, constructor functions.
+  constructor(name) {
+    // invokes the setter
+    this.name = name;
+  }
+
+  get name() {
+    return this._name;
+  }
+
+  set name(value) {
+    if (value.length < 4) {
+      alert("Name is too short.");
+      return;
+    }
+    this._name = value;
+  }
+
+}
+
+let user = new User("John");
+alert(user.name); // John
+
+user = new User(""); // Name is too short.
+```
