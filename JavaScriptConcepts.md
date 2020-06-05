@@ -172,6 +172,16 @@ console.log(weakMapCache); // ((…) => {}) - first entry gets garbage collected
   Array.from(arrayLike, [mapFunction])
   ```
 * Surely `.indexOf(element) !== -1` must be replaced with `arr.includes(element, [fromIndex])`. 
+* In javascript arrays are not true arrays like in java and in other languages. They're actually objects so typeof will return "object" for them. To know if something's really an array its constructor can be compared to Array. [refer here for other types](https://webbjocke.com/javascript-check-data-types/)
+```javascript
+// Returns if a value is an array
+function isArray (value) {
+return value && typeof value === 'object' && value.constructor === Array;
+}
+
+// ES5 actually has a method for this (ie9+)
+Array.isArray(value);
+```
 
 ## Strings
 * ECMAScript 2015 provides a correct method to verify a substring existence: 
@@ -184,6 +194,12 @@ The method returns a boolean that indicates if substring is a substring of strin
 * `Object.assign()` function from ES2015 is designed to implement this requirement. Native, tested and standardized solution.
 * Use `Number.isNaN` function to check for a number.
 * Object only supports one object as a key. If you want to use multiple keys as objects, use `Map`.
+* Returns if a value is an object
+```javascript
+function isObject (value) {
+return value && typeof value === 'object' && value.constructor === Object;
+}
+```
 
 ## Functions
 * Regular functions can be invoked in 4 ways.
