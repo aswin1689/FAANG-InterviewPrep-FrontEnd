@@ -31,3 +31,4 @@
 * [Event Loop](https://www.youtube.com/watch?v=cCOL7MC4Pl0)
 * [JS 1 Liners](https://1loc.dev/)
 * [Good Blog](https://dmitripavlutin.com/javascript-modules-best-practices/)
+* [losing this](https://javascript.info/bind) **good article**
