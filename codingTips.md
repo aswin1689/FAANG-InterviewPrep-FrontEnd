@@ -42,6 +42,10 @@ for(let i = 0, len = arr.length; i < len; i++) {
   ...
 }
 ```
+* If you need to loop over array by excluding current element in each iteration use
+```javascript
+[...arr.slice(0, i), ...arr.slice(i+1)]
+```
 
 ## String
 
@@ -140,6 +144,3 @@ map.forEach((val, key, map) => {...})
 ```
 
 ## Set
-
-# Useful Links
-* https://medium.com/dailyjs/cribsheet-for-javascript-coding-interview-f6327a69a6b7
