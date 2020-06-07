@@ -45,6 +45,19 @@ When a problem is given to you,
 * Recursion implicitly uses a stack. Hence all recursive approaches can be rewritten iteratively using a stack. Beware of cases where the recursion level goes too deep and causes a stack overflow.
 * Recursion will never be O(1) space complexity because a stack is involved, unless there is tail call optimization (TCO).
 
+## Backtracking
+### Steps to solve a backtracking problem (2D board)
+* Calculate rowLength, colLength.
+* Define a helper function which takes row, column and current parameter e.g., `currIndex`
+  * Define boundary conditions `(row < 0 || row >= rowLen || col < 0 || col >= colLen)` for the board. `return false` if you meet these conditions. 
+  * Define other false conditions like if the cell value is not what we want. `return false`.
+  * `return true` if you meet solution condition e.g, if index is last index. 
+  * If the current cell has value we are interested in mark the cell as visited by `board[x][y] = '*';` 
+  * Declare a variable `tempResult` and assign || of all the helper function for top, right, bottom, left directions.
+  * Reset the cell value to `board[x][y] = word[k];`. 
+  * `return tempResult`.
+* Call the helper function for each cell in the board and if helper function returns true then `return true`, else `return false`.
+
 ## Dynamic Programming
 * https://leetcode.com/discuss/general-discussion/458695/Dynamic-Programming-Patterns
 * A matrix is a 2-dimensional array. Questions involving matrices are usually related to dynamic programming or graph traversal.
