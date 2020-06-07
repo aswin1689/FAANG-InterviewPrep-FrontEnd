@@ -93,6 +93,15 @@ s = s.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
 ## Search
 
 * Tip to quickly prove the correctness of your binary search algorithm during an interview. We just need to test an input of size 2. Check if it reduces the search space to a single element (which must be the answer). If not, your algorithm will never terminate.
+* `Quickselect` is a textbook algorithm typically used to solve the problems "find kth something": kth smallest, kth largest, kth most frequent, kth less frequent, etc. It has `O(N)` average time complexity and widely used in practice. It worth to note that its worth case time complexity is `O(N<sup>2</sup>)`, although the probability of this worst-case is negligible. The approach is the same as for quicksort.
+
+> One chooses a pivot and defines its position in a sorted array in a linear time using so-called partition algorithm.
+
+As an output, we have an array where the pivot is on its perfect position in the ascending sorted array, sorted by the frequency. All elements on the left of the pivot are less frequent than the pivot, and all elements on the right are more frequent or have the same frequency.
+
+Hence the array is now split into two parts. If by chance our pivot element took `N - k`th final position, then `k` elements on the right are these top `k` frequent we're looking for. If not, we can choose one more pivot and place it in its perfect position. 
+![quickselect](https://leetcode.com/articles/Figures/347_rewrite/hoare.png)
+If that were a quicksort algorithm, one would have to process both parts of the array. That would result in `O(Nlog⁡N)` time complexity. In this case, there is no need to deal with both parts since one knows in which part to search for N - kth less frequent element, and that reduces the average time complexity to `O(N)`.
 
 ## Sort
 * Merge Sort
