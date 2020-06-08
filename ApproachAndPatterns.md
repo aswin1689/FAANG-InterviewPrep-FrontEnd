@@ -34,6 +34,7 @@ When a problem is given to you,
 ## Array
 * Two pointer technique - move zeroes, reverse String (two pointer is less buggy because you don't have to consider odd and even length string scenario.)
 * Try reversing and transposing 2D matrix for rotating or any problem as an option.
+* sliding window techinque - https://leetcode.com/discuss/general-discussion/655708/graph-for-beginners-problems-pattern-sample-solutions/562734
 
 ## String
 * Two pointer technique - palindrome
@@ -69,6 +70,9 @@ When a problem is given to you,
 * In-order traversal of a binary tree is insufficient to uniquely serialize a tree. Pre-order or post-order traversal is also required.
 * When a question involves a BST, the interviewer is usually looking for a solution which runs faster than O(n).
 
+## Graphs
+https://leetcode.com/discuss/general-discussion/655708/graph-for-beginners-problems-pattern-sample-solutions/562734
+
 ## BFS
 * Try to implement the solution incrementally when generating combinations problems. e.g., phone letter pad combinations, generate parentheses.
 
@@ -82,3 +86,4 @@ When a problem is given to you,
 ## Heap
 * If you see a top or lowest k mentioned in the question, it is usually a sign that a heap can be used to solve the problem.
 * If you require the top k elements, use a Min Heap of size k. Iterate through each element, pushing it into the heap. Whenever the heap size exceeds k, remove the minimum element. That will guarantee that you have the k largest elements.
+* You can also use `quickselect` algorithm to find kth-any element. [freecodecamp article](https://www.freecodecamp.org/news/quickselect-algorithm-explained-with-examples/)
