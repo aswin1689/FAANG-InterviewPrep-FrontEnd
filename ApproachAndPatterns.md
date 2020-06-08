@@ -42,6 +42,18 @@ When a problem is given to you,
 * When a question is about counting the number of palindromes, a common trick is to have two pointers that move outward, away from the middle. Note that palindromes can be even or odd length. For each middle pivot position, you need to check it twice: Once that includes the character and once without the character.
 * For substrings, you can terminate early once there is no match. For subsequences, use dynamic programming as there are overlapping subproblems. 
 
+## Search
+* `Quickselect` is a textbook algorithm typically used to solve the problems "find kth something": kth smallest, kth largest, kth most frequent, kth less frequent, etc. It has `O(N)` average time complexity and widely used in practice. It worth to note that its worth case time complexity is O(N<sup>2</sup>), although the probability of this worst-case is negligible. The approach is the same as for quicksort.
+
+> One chooses a pivot and defines its position in a sorted array in a linear time using so-called partition algorithm.
+
+As an output, we have an array where the pivot is on its perfect position in the ascending sorted array, sorted by the frequency. All elements on the left of the pivot are less frequent than the pivot, and all elements on the right are more frequent or have the same frequency.
+
+Hence the array is now split into two parts. If by chance our pivot element took `N - k`th final position, then `k` elements on the right are these top `k` frequent we're looking for. If not, we can choose one more pivot and place it in its perfect position. 
+![quickselect](https://leetcode.com/articles/Figures/347_rewrite/hoare.png)
+If that were a quicksort algorithm, one would have to process both parts of the array. That would result in `O(N log⁡N)` time complexity. In this case, there is no need to deal with both parts since one knows in which part to search for N - kth less frequent element, and that reduces the average time complexity to `O(N)`.
+* To find kth-smallest use k and to find kth-largest, use `N - k` where N is # of numbers.
+
 ## Recursion
 * Recursion implicitly uses a stack. Hence all recursive approaches can be rewritten iteratively using a stack. Beware of cases where the recursion level goes too deep and causes a stack overflow.
 * Recursion will never be O(1) space complexity because a stack is involved, unless there is tail call optimization (TCO).
@@ -86,4 +98,4 @@ https://leetcode.com/discuss/general-discussion/655708/graph-for-beginners-probl
 ## Heap
 * If you see a top or lowest k mentioned in the question, it is usually a sign that a heap can be used to solve the problem.
 * If you require the top k elements, use a Min Heap of size k. Iterate through each element, pushing it into the heap. Whenever the heap size exceeds k, remove the minimum element. That will guarantee that you have the k largest elements.
-* You can also use `quickselect` algorithm to find kth-any element. [freecodecamp article](https://www.freecodecamp.org/news/quickselect-algorithm-explained-with-examples/)
+* You can also use `quickselect` algorithm to find kth-any element. Refer the `Search` section above
