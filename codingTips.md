@@ -6,6 +6,11 @@
 ```javascript
 start + Math.floor((end-start)/2)
 ```
+* Sorting 2D array eg., merge intervals
+```javascript
+intervals.sort((a,b) => a[0] != b[0] ? a[0] - b[0] : a[1]-b[1]);
+```
+
 * To create an array of size 10 and initialize with -1, use 
 ```javascript
 Array(10).fill(-1)
@@ -97,6 +102,26 @@ s = s.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
 ## Search
 
 * Tip to quickly prove the correctness of your binary search algorithm during an interview. We just need to test an input of size 2. Check if it reduces the search space to a single element (which must be the answer). If not, your algorithm will never terminate.
+* code for binary search
+```javascript
+    function search(list, target) {
+        let start = 0;
+        let end = list.length-1;
+        
+        while(start <= end) {
+            let mid = start + Math.floor((end-start)/2);
+            
+            if(list[mid] === target) return true;
+            
+            if(list[mid] < target) {
+                start = mid+1;
+            } else {
+                end = mid-1;
+            }
+        }
+        return false
+    }
+```
 
 ## Sort
 * Merge Sort
