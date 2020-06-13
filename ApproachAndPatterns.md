@@ -33,14 +33,15 @@ When a problem is given to you,
 
 ## Array
 * Two pointer technique - move zeroes, reverse String (two pointer is less buggy because you don't have to consider odd and even length string scenario.)
-* Try reversing and transposing 2D matrix for rotating or any problem as an option.
-* sliding window techinque - https://leetcode.com/discuss/general-discussion/655708/graph-for-beginners-problems-pattern-sample-solutions/562734
+* Try `reversing`, `transposing` 2D matrix as an option e.g., Rotating a 2D matrix
+* sliding window techinque
 
 ## String
 * Two pointer technique - palindrome
 * If the order of characters within the string matters, so HashMaps are usually not helpful.
 * When a question is about counting the number of palindromes, a common trick is to have two pointers that move outward, away from the middle. Note that palindromes can be even or odd length. For each middle pivot position, you need to check it twice: Once that includes the character and once without the character.
 * For substrings, you can terminate early once there is no match. For subsequences, use dynamic programming as there are overlapping subproblems. 
+* sliding window - find all anagrams
 
 ## Search
 * `Quickselect` is a textbook algorithm typically used to solve the problems "find kth something": kth smallest, kth largest, kth most frequent, kth less frequent, etc. It has `O(N)` average time complexity and widely used in practice. It worth to note that its worth case time complexity is O(N<sup>2</sup>), although the probability of this worst-case is negligible. The approach is the same as for quicksort.
