@@ -61,13 +61,13 @@ If that were a quicksort algorithm, one would have to process both parts of the 
 
 ## Backtracking
 ### Steps to solve a backtracking problem (2D board)
-* Calculate rowLength, colLength.
+* Calculate height and width of the 2D matrix.
 * Define a helper function which takes row, column and current parameter e.g., `currIndex`
   * Define boundary conditions `(row < 0 || row >= rowLen || col < 0 || col >= colLen)` for the board. `return false` if you meet these conditions. 
   * Define other false conditions like if the cell value is not what we want. `return false`.
   * `return true` if you meet solution condition e.g, if index is last index. 
-  * If the current cell has value we are interested in mark the cell as visited by `board[x][y] = '*';` 
-  * Declare a variable `tempResult` and assign || of all the helper function for top, right, bottom, left directions.
+  * If the current cell has value we are interested in, mark the cell as visited by `board[x][y] = '*';` 
+  * Declare a variable `tempResult` and assign `||` of all the helper function for top, right, bottom, left directions.
   * Reset the cell value to `board[x][y] = word[k];`. 
   * `return tempResult`.
 * Call the helper function for each cell in the board and if helper function returns true then `return true`, else `return false`.
@@ -85,6 +85,40 @@ If that were a quicksort algorithm, one would have to process both parts of the 
 
 ## Graphs
 https://leetcode.com/discuss/general-discussion/655708/graph-for-beginners-problems-pattern-sample-solutions/562734
+
+## DFS
+<details>
+  <summary>Number of Islands (Click to expand!)</summary>
+  
+```javascript 
+var numIslands = function(grid) {
+    let count = 0;
+    
+    function markIsland(grid, i, j) {
+        if(i < 0 || i > grid.length-1 || j < 0 || j > grid[i].length-1) {
+            return;
+        }
+        if(grid[i][j] === '0') return;
+        grid[i][j] = '0';
+        markIsland(grid, i-1, j)
+        markIsland(grid, i+1, j)
+        markIsland(grid, i, j-1)
+        markIsland(grid, i, j+1)
+    }
+    
+    for(let i = 0; i < grid.length; i++) {
+        for(let j = 0; j < grid[i].length; j++) {
+            if(grid[i][j] === '1') {
+                count++;
+                markIsland(grid, i, j)
+            }
+        }
+    }
+    
+    return count;
+};
+```
+</details>
 
 ## BFS
 * Try to implement the solution incrementally when generating combinations problems. e.g., phone letter pad combinations, generate parentheses.
