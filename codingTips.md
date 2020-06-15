@@ -8,7 +8,7 @@ start + Math.floor((end-start)/2)
 ```
 * Sorting 2D array eg., merge intervals
 ```javascript
-intervals.sort((a,b) => a[0] != b[0] ? a[0] - b[0] : a[1]-b[1]);
+intervals.sort((a,b) => a[0] != b[0] ? a[0] - b[0] : a[1] - b[1]);
 ```
 
 * To create an array of size 10 and initialize with -1, use 
@@ -54,6 +54,10 @@ for(let i = 0, len = arr.length; i < len; i++) {
 * If you need to loop over array by excluding current element in each iteration use
 ```javascript
 [...arr.slice(0, i), ...arr.slice(i+1)]
+```
+* To check if value is an array, use 
+```javascript
+Array.isArray(input)
 ```
 
 ## String
