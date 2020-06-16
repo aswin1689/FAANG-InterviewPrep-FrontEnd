@@ -95,6 +95,29 @@ s = s.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
 * In Binary Search Tree, some times we might need to compare the node's value against lower and upper bounds and not the left and right child values. e.g., valide BST. Here left child's value of node in right sub tree should not only be smaller than parent node but also must be greater than root's value. 
 * The number of recursive calls is bound by the height of the tree. In the worst case, the tree is linear and the height is in ```O(n)```. Therefore, space complexity due to recursive calls on the stack is ```O(n)``` in the worst case.
 * For DFS, use Stack and for BFS, use Queue.
+<details>
+  <summary>BST Inorder Iterative</summary>
+  
+  ```javascript
+  function inorderTraversal(root) {
+  const stack = [];
+  const res = [];
+
+  while (root || stack.length) {
+    if (root) {
+      stack.push(root);
+      root = root.left;
+    } else {
+      root = stack.pop();
+      res.push(root.val);
+      root = root.right;
+    }
+  }
+  return res;
+}
+  ```
+</details>
+
 * Iterative means BFS and Recursive means DFS.
 * In BFS, when using queue, if you want the length of each level, declare a second variable that holds the size of that level and decrement the variable on each iteration. 
 * If the problem involves parsing or tree/graph traversal (or reversal in some way), consider using a stack.
@@ -175,5 +198,7 @@ let a = 1, b = 2;
 ```javascript
 map.forEach((val, key, map) => {...})
 ```
+* Performs better in scenarios involving frequent additions and removals of key-value pairs. `Objects` are not optimized for this scenario.
+
 
 ## Set
