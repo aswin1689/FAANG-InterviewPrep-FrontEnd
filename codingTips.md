@@ -118,9 +118,7 @@ s = s.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
   ```
 </details>
 
-* Iterative means BFS and Recursive means DFS.
-* In BFS, when using queue, if you want the length of each level, declare a second variable that holds the size of that level and decrement the variable on each iteration. 
-* If the problem involves parsing or tree/graph traversal (or reversal in some way), consider using a stack.
+* In BFS, when using queue, if you want the length of each level, declare a second variable that holds the `size` of that level and decrement the variable on each iteration. 
 
 ## Graph
 
@@ -153,7 +151,26 @@ s = s.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
 ## Sort
 * Merge Sort
 
+## Backtracking
+* An algorithmic-technique for solving problems by trying to build a solution incrementally, one piece at a time, removing those solutions that fail to satisfy the constraints of the problem.
+
+## Greedy algorithms
+* An algorithmic paradigm that builds up a solution piece by piece, meaning it chooses the next piece that offers the most obvious and immediate benefit but may not be optimal overall solution.
+
+## Divide & Conquer
+* **Divide-and-conquer algorithms** partition the problem into disjoint subproblems, solve the subproblems recursively, and then combine their solutions to solve the original problem. In contrast, `dynamic programming` applies when the subproblems overlap - that is, when subproblems share sub subproblems. In this context, a divide-and-conquer algorithm does more work than necessary, repeatedly solving the common subsubproblems.
+
 ## Dynamic Programming
+* A **dynamic-programming algorithm** solves each subsubproblem just once and then saves its answer in a table, thereby avoiding the work of recomputing the answer every time it solves each subsubproblem.
+* We typically apply dynamic programming to ***optimization problems***. Such problems can have many possible solutions. Each solution has a value, and we wish to find a solution with the optimal (minimum or maximum) value.
+* We call such a solution *an* optimal solution to the problem, as opposed to *the* optimal solution, since there may be several solutions that achieve the optimal value.
+* When developing a dynamic-programming algorithm, we follow a sequence of four steps:
+  1. Characterize the structure of an optimal solution.
+  2. Recursively define the value of an optimal solution.
+  3. Compute the value of an optimal solution, typically in a bottom-up fashion.
+  4. Construct an optimal solution from computed information.
+
+![Greedy vs DP vs D&C](https://res.cloudinary.com/practicaldev/image/fetch/s--QOijg1AO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://skerritt.blog/content/images/2019/06/image-10.png)
 
 # JavaScript
 * The following function returns a random number between min (inclusive) and max (exclusive):
