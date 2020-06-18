@@ -92,6 +92,7 @@ s = s.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
 * Use array as Queue. **push** for enqueue and **shift** for dequeue.
 
 ## Tree
+* Tree is an acyclic undirected graph.
 * In Binary Search Tree, some times we might need to compare the node's value against lower and upper bounds and not the left and right child values. e.g., valide BST. Here left child's value of node in right sub tree should not only be smaller than parent node but also must be greater than root's value. 
 * The number of recursive calls is bound by the height of the tree. In the worst case, the tree is linear and the height is in ```O(n)```. Therefore, space complexity due to recursive calls on the stack is ```O(n)``` in the worst case.
 * For DFS, use Stack and for BFS, use Queue.
@@ -121,6 +122,29 @@ s = s.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
 * In BFS, when using queue, if you want the length of each level, declare a second variable that holds the `size` of that level and decrement the variable on each iteration. 
 
 ## Graph
+There are two primary ways of representing graph:
+1.  Adjacency list
+2.  Adjacency Matrix
+
+* The adjacency matrix is one way of representing a graph using a two-dimensional array (`NxN` matrix). In the intersection of nodes, we add `1` (or other weight) if they are connected and `0` or `-` if they are not connected.
+```javascript
+  a b c d e
+a 1 1 - - -
+b - - 1 - - 
+c - - - 1 -
+d - 1 1 - -
+```
+* Imagine that you need to represent Facebook network as a graph. You would have to create a matrix of `2 billion x 2 billion`, where most of it would be empty! Nobody would know everybody else just a few thousands at most.
+* In general, we deal with sparse graphs so the matrix will waste a lot of space. That’s why in most implementation we would use an adjacency list rather than the matrix.
+* Graphs can be represented as an adjacency list using an Array (or HashMap) containing the nodes. Each of these node entries includes a list (array, linked list, set, etc.) that list its adjacent nodes.
+```javascript
+const graph = {
+  a: ['a', 'b'],
+  b: ['c'],
+  c: ['d'],
+  d: ['b', 'c']
+}
+```
 
 ## Trie
 
