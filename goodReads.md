@@ -19,6 +19,7 @@
 * [Merge K-sorted Arrays](https://medium.com/outco/how-to-merge-k-sorted-arrays-c35d87aa298e)
 
 # Algorithms
+* [8 graph algorithms in JS](https://www.freecodecamp.org/news/8-essential-graph-algorithms-in-javascript/)
 * [Khan Academy Algorithms](https://www.khanacademy.org/computing/computer-science/algorithms)
 * [Princeton Algorithms by Sedgewick](https://algs4.cs.princeton.edu/home/)
 
