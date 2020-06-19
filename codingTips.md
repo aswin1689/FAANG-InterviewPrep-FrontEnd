@@ -147,31 +147,126 @@ const graph = {
 }
 ```
 
+### BFS
+* BFS visits the nodes **one level at a time**. To prevent visiting the same node more than once, we'll maintain a **visited** object.
+* Since we need to process the nodes in a First In First Out fashion, a queue is a good contender for the data structure to use. The time complexity is `O(V+E)`.
+<details>
+<summary>BFS pseudo code</summary>
+  
+```javascript
+function BFS
+   Initialize an empty queue, empty 'result' array & a 'visited' map
+   Add the starting vertex to the queue & visited map
+   While Queue is not empty:
+     - Dequeue and store current vertex
+     - Push current vertex to result array
+     - Iterate through current vertex's adjacency list:
+       - For each adjacent vertex, if vertex is unvisited:
+         - Add vertex to visited map
+         - Enqueue vertex
+   Return result array
+```
+</details>
+
+<details>
+  <summary>BFS code</summary>
+  
+```javascript
+Graph.prototype.bfs = function(start) {
+    const queue = [start];
+    const result = [];
+    const visited = {};
+    visited[start] = true;
+    let currentVertex;
+    while (queue.length) {
+      currentVertex = queue.shift();
+      result.push(currentVertex);
+      this.adjacencyList[currentVertex].forEach(neighbor => {
+        if (!visited[neighbor]) {
+          visited[neighbor] = true;
+          queue.push(neighbor);
+        }
+      });
+    }
+    return result;
+}
+```
+</details>
+
+### DFS
+* DFS visits the nodes depth wise. Since we need to process the nodes in a Last In First Out manner, we'll use a **stack**.
+* Starting from a vertex, we'll push the neighboring vertices to our stack. Whenever a vertex is popped, it is marked visited in our visited object. Its neighboring vertices are pushed to the stack. Since we are always popping a new adjacent vertex, our algorithm will always **explore a new level**. The time complexity is the same as BFS, `O(V+E)`.
+<details>
+<summary>DFS pseudo code</summary>
+  
+```javascript
+function DFS
+   Initialize an empty stack, empty 'result' array & a 'visited' map
+   Add the starting vertex to the stack & visited map
+   While Stack is not empty:
+     - Pop and store current vertex
+     - Push current vertex to result array
+     - Iterate through current vertex's adjacency list:
+       - For each adjacent vertex, if vertex is unvisited:
+         - Add vertex to visited map
+         - Push vertex to stack
+   Return result array
+```
+</details>
+<details>
+  <summary>DFS code</summary>
+  
+```javascript
+Graph.prototype.dfsIterative = function(start) {
+    const result = [];
+    const stack = [start];
+    const visited = {};
+    visited[start] = true;
+    let currentVertex;
+    while (stack.length) {
+      currentVertex = stack.pop();
+      result.push(currentVertex);
+      this.adjacencyList[currentVertex].forEach(neighbor => {
+        if (!visited[neighbor]) {
+          visited[neighbor] = true;
+          stack.push(neighbor);
+        }
+      });
+    }
+    return result;
+}
+```
+</details>
+
 ## Trie
 
 ## Search
 
 * Tip to quickly prove the correctness of your binary search algorithm during an interview. We just need to test an input of size 2. Check if it reduces the search space to a single element (which must be the answer). If not, your algorithm will never terminate.
-* code for binary search
+<details>
+<summary>code for binary search</summary>
+  
 ```javascript
-    function search(list, target) {
-        let start = 0;
-        let end = list.length-1;
-        
-        while(start <= end) {
-            let mid = start + Math.floor((end-start)/2);
-            
-            if(list[mid] === target) return true;
-            
-            if(list[mid] < target) {
-                start = mid+1;
-            } else {
-                end = mid-1;
-            }
-        }
-        return false
-    }
+  function search(list, target) {
+      let start = 0;
+      let end = list.length-1;
+
+      while(start <= end) {
+          let mid = start + Math.floor((end-start)/2);
+
+          if(list[mid] === target) return true;
+
+          if(list[mid] < target) {
+              start = mid+1;
+          } else {
+              end = mid-1;
+          }
+      }
+      return false
+  }
 ```
+  
+</details>
 
 ## Sort
 * Merge Sort
