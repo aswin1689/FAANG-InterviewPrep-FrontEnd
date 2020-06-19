@@ -125,7 +125,8 @@ s = s.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
 There are two primary ways of representing graph:
 1.  Adjacency list
 2.  Adjacency Matrix
-
+* Let us conside the graph below
+* <img src="https://adrianmejia.com/images/digraph.png" width="150" />
 * The adjacency matrix is one way of representing a graph using a two-dimensional array (`NxN` matrix). In the intersection of nodes, we add `1` (or other weight) if they are connected and `0` or `-` if they are not connected.
 ```javascript
   a b c d e
