@@ -12,6 +12,7 @@
 
 # Data Structures
 * [Adrian Mejia blog in JS](https://adrianmejia.com/categories/coding/data-structures-and-algorithms-dsa/)
+* [DS resources JS](https://dev.to/ladybug/six-data-structures-you-should-know-in-2020-3h5a)
 * [DS Algo Big O cheatsheet](https://algs4.cs.princeton.edu/cheatsheet/)
 * [DS by Vaidehi Joshi](https://medium.com/basecs/tagged/data-structures)
 
