@@ -190,6 +190,9 @@ string.includes(substring, [fromIndex])
 ```
 The method returns a boolean that indicates if substring is a substring of string, optionally starting from an index `fromIndex`. 
 
+## Numbers
+* Use `Number.isNaN` function to check for a number.
+
 ## Functions
 * Regular functions can be invoked in 4 ways.
   * simple invocation
@@ -207,8 +210,20 @@ The method returns a boolean that indicates if substring is a substring of strin
 # OOPS
 
 ## Objects
-* `Object.assign()` function from ES2015 is designed to implement this requirement. Native, tested and standardized solution.
-* Use `Number.isNaN` function to check for a number.
+* The **`Object.assign()`** method copies all [enumerable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/propertyIsEnumerable) [own properties](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty) from one or more *source objects* to a *target object*. It returns the target object.
+```javascript
+const target = { a: 1, b: 2 };
+const source = { b: 4, c: 5 };
+
+const returnedTarget = Object.assign(target, source);
+
+console.log(target);
+// expected output: Object { a: 1, b: 4, c: 5 }
+```
+* The **`Object.seal()`** method seals an object, preventing new properties from being added to it and marking all existing properties as non-configurable. Values of present properties can still be changed as long as they are writable.
+* The **`Object.freeze()`** method **freezes** an object. A frozen object can no longer be changed; freezing an object prevents new properties from being added to it, existing properties from being removed, prevents changing the enumerability, configurability, or writability of existing properties, and prevents the values of existing properties from being changed. In addition, freezing an object also prevents its prototype from being changed. `freeze()` returns the same object that was passed in.
+* Object does not maintain insertion order like a [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
+* Object converts other types of `keys` to string implicitly, but `Map` maintains the original type.
 * Object only supports one object as a key. If you want to use multiple keys as objects, use `Map`.
 * Returns if a value is an object
 ```javascript
