@@ -32,7 +32,8 @@ When a problem is given to you,
 * Try to use more pointers if asked to solve in place. e.g., move odd-even lists.
 
 ## Array
-* Two pointer technique - move zeroes, reverse String (two pointer is less buggy because you don't have to consider odd and even length string scenario.)
+* Two pointer technique - It is less buggy because you don't have to consider odd and even length string scenario. e.g., move zeroes, reverse String.
+* For merge intervals problems, consider two point technique.
 * Try `reversing`, `transposing` 2D matrix as an option e.g., Rotating a 2D matrix
 * sliding window techinque
 
@@ -42,6 +43,38 @@ When a problem is given to you,
 * When a question is about counting the number of palindromes, a common trick is to have two pointers that move outward, away from the middle. Note that palindromes can be even or odd length. For each middle pivot position, you need to check it twice: Once that includes the character and once without the character.
 * For substrings, you can terminate early once there is no match. For subsequences, use dynamic programming as there are overlapping subproblems. 
 * sliding window - find all anagrams
+
+## Stack
+* For parenthesis matching problems, consider `stack`. e.g.,
+<details>
+ <summary>Min remove to make string valid</summary>
+ 
+ ```javascript
+ /*
+ Input: s = "lee(t(c)o)de)"
+ Output: "lee(t(c)o)de"
+ */
+ var minRemoveToMakeValid = function(s) {
+    let stack = [];
+    let str = s.split(''); 
+    
+    for(let i = 0, len = str.length; i < len; i++) {
+        if(str[i] === '(') {
+            stack.push(i);
+        } else if (str[i] === ')') {
+            if(stack.length) stack.pop();
+            else str[i] = '';
+        }
+    }
+    
+    for(const i of stack) {
+        str[i] = ''
+    }
+    
+    return str.join('')
+};
+ ```
+</details>
 
 ## Search
 * `Quickselect` is a textbook algorithm typically used to solve the problems "find kth something": kth smallest, kth largest, kth most frequent, kth less frequent, etc. It has `O(N)` average time complexity and widely used in practice. It worth to note that its worth case time complexity is O(N<sup>2</sup>), although the probability of this worst-case is negligible. The approach is the same as for quicksort.
