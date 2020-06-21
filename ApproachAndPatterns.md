@@ -90,7 +90,7 @@ If that were a quicksort algorithm, one would have to process both parts of the 
 
 ## Recursion
 * Recursion implicitly uses a stack. Hence all recursive approaches can be rewritten iteratively using a stack. Beware of cases where the recursion level goes too deep and causes a stack overflow.
-* Recursion will never be O(1) space complexity because a stack is involved, unless there is tail call optimization (TCO).
+* Recursion will never be `O(1)` space complexity because a stack is involved, unless there is tail call optimization (TCO).
 
 ## Backtracking
 ### Steps to solve a backtracking problem (2D board)
@@ -106,6 +106,13 @@ If that were a quicksort algorithm, one would have to process both parts of the 
 * Call the helper function for each cell in the board and if helper function returns true then `return true`, else `return false`.
 
 ## Dynamic Programming
+* Recursion in DP can be done with following steps
+    -  Evaluate choices
+    -  Write recursive function with base cases
+    -  Ensure that recursive function has varying parameters each time it is called.
+    -  Setup cache and capture intermediate results in it. The size/dimension of cache varies with number of varying parameters passed to recursion. If function takes 2 parameters, cache is of size `cache[size1][size2]`, if 3 then `cache[size1][size2][size3]`.
+    -  Return if result is in cache.
+    -  Done
 * https://leetcode.com/discuss/general-discussion/458695/Dynamic-Programming-Patterns
 * A matrix is a 2-dimensional array. Questions involving matrices are usually related to dynamic programming or graph traversal.
 * For questions involving traversal or dynamic programming, make a copy of the matrix with the same dimensions that are initialized to empty values. Use these values to store the visited state or dynamic programming table. 
