@@ -7,7 +7,8 @@
 
 ## Facebook Prep
 * [Coding interview guide](https://www.facebook.com/notes/sergey-makagonov/another-coding-interview-preparation-guide/10210834096793375/)
-* [Facebook questions - Leetcode](https://leetcode.com/discuss/general-discussion/675445/facebook-interview-experiences-all-combined-from-lc-till-date-07-jun-2020) \***imp
+* [FB SDE](https://orrsella.com/2016/05/14/preparing-for-a-facebook-google-software-engineer-interview/) **imp
+* [Facebook questions - Leetcode](https://leetcode.com/discuss/general-discussion/675445/facebook-interview-experiences-all-combined-from-lc-till-date-07-jun-2020) **imp
 * [Facebook questions - Geeks4Geeks](https://www.geeksforgeeks.org/facebook-interview-preparation/)
 
 # Data Structures
@@ -21,14 +22,16 @@
 
 # Algorithms
 * [8 graph algorithms in JS](https://www.freecodecamp.org/news/8-essential-graph-algorithms-in-javascript/)
+* [educative algorithms-an-interview-refresher](https://www.educative.io/blog/algorithms-an-interview-refresher)
 * [Khan Academy Algorithms](https://www.khanacademy.org/computing/computer-science/algorithms)
 * [Princeton Algorithms by Sedgewick](https://algs4.cs.princeton.edu/home/)
+* [recursion](https://www.educative.io/blog/the-insiders-guide-to-recursion)
 
 ## DFS
 * https://www.freecodecamp.org/news/dfs-for-your-next-tech-giant-interview/
 
 # Web
-* [Facebook Redesign](https://engineering.fb.com/web/facebook-redesign/) \***imp
+* [Facebook Redesign](https://engineering.fb.com/web/facebook-redesign/) **imp
 * [Web.dev](https://web.dev/learn/)
 
 # JavaScript
