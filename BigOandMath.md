@@ -1,5 +1,22 @@
 # Big O
-https://www.bigocheatsheet.com/
+* https://www.bigocheatsheet.com/
+* <img src="https://miro.medium.com/max/2928/1*5ZLci3SuR0zM_QlZOADv8Q.jpeg" />
+
+1. **Constant**: O(1)
+
+2. **Logarithmic**: O(log n). In computer science, it's usually implied that the base is 2. Log 10 is generally log 10 base 2
+
+3. **Linear**: O(n)
+
+4. **Linearithmic**: O(n log n) quicksort, mergesort
+
+5. **Quadratic**: O(n²)
+
+6. **Cubic**: O(n^3) enumerating all triples of items
+
+7. **Expontential**: O(2^n) enumerating all subsets of n items
+
+8. **Factorial**: O(n!) generating all permutations or orderings of n items
 
 ## Time Complexity
 
