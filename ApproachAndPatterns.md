@@ -14,14 +14,24 @@ When a problem is given to you,
 * For Linked lists, duplicate nodes exist or not, has atleast two nodes, ask if n is always valid,
 * For Trees, if BST, can there be nodes with same value. 
 * For BST, trial with all approaches you can think of if you don't know how to start/given an unknown problem. For example, check with stack, queue, BFS, DFS, pre-order, in-order, post-order, reverse pre-order, range sum queries, upper and lower bounds.
+* `In-place` does not mean *"without creating any additional variables!"* Rather, it means *"without creating a new copy of the input."* In general, an in-place function will only create additional variables that are `O(1)` space.
+    * **Working in-place is a good way to save time and space.** An in-place algorithm avoids the cost of initializing or copying data structures, and it usually has an O(1) space cost.
+    * **But be careful: an in-place algorithm can cause side effects.** Your input is "destroyed" or "altered," which can affect code *outside* of your function. For example:
+    * **Generally, out-of-place algorithms are considered safer because they avoid side effects.** You should only use an in-place algorithm if you're space constrained or you're *positive* you don't need the original input anymore, even for debugging.
+*	Prefer iteration over recursion to avoid limited stack space by recursion.
+* When we see terms such as: "shortest/longest, minimized/maximized, least/most, fewest/greatest, biggest/smallest", We know it's an optimization problem.
+* When interviewer gives a sorted list, you can take advantage and use binary tree.
+* If there is a brute force solution in time O(N<sup>2</sup>) and space `O(1)`, there must exist 2 solutions 
+    * Using a `Map` or `Set` in `O(N)` time and `O(N)` space.
+    * Using sorting `O(N log N)` time and `O(1)` space.
 
 ### Outputs
-* check what should be returned by the algorithm. Is it indexes, arrays or just length of arrays?
+* check what should be returned by the algorithm. Is it indexes, arrays, boolean or just length of array?
 
 # Patterns
 
 ## Linked List
-* Slow and Fast pointer - is list circular / has loop, is list palindrome
+* Slow and Fast pointer. Use this approach if you can't use extra space. e.g., is list circular / has loop, is list palindrome
 * Two pointer - delete nth node from list,
 * If the length of linked list is unknown and if we need to traverse to the center of the list, use Slow and fast pointers.
 * Adding a dummy node at the head and /or tail might help to handle many edge cases where operations have to be performed at the head or the tail. The presence of dummy nodes ensures that operations will never have be executed on the head or the tail. Dummy nodes remove the headache of writing conditional checks to deal with null pointers. Be sure to remove them at the end of the operation.
@@ -43,6 +53,7 @@ When a problem is given to you,
 * When a question is about counting the number of palindromes, a common trick is to have two pointers that move outward, away from the middle. Note that palindromes can be even or odd length. For each middle pivot position, you need to check it twice: Once that includes the character and once without the character.
 * For substrings, you can terminate early once there is no match. For subsequences, use dynamic programming as there are overlapping subproblems. 
 * sliding window - find all anagrams
+* If we need to find substring among set of strings, we use `hashmap` or `trie`.
 
 ## Stack
 * For parenthesis matching problems, consider `stack`. e.g.,
@@ -76,6 +87,19 @@ When a problem is given to you,
  ```
 </details>
 
+## Trie
+* If we need to search among a bunch of strings, `trie` is the best DS.
+* Common data structures for looking up strings efficiently are
+  * Trie/Prefix Tree
+  * Suffix Tree
+* Tries are special trees (prefix trees) that make searching and storing strings more efficient. Tries have many practical applications, such as conducting searches and providing autocomplete. It is helpful to know these common applications so that you can easily identify when a problem can be efficiently solved using a trie.
+* Sometimes preprocessing a dictionary of words (given in a list) into a trie, will improve the efficiency of searching for a word of length k, among n words. Searching becomes O(k) instead of O(n).
+
+## Heap
+* If you see a top or lowest k mentioned in the question, it is usually a sign that a heap can be used to solve the problem.
+* If you require the top k elements, use a Min Heap of size k. Iterate through each element, pushing it into the heap. Whenever the heap size exceeds k, remove the minimum element. That will guarantee that you have the k largest elements.
+* You can also use `quickselect` algorithm to find kth-any element. Refer the `Search` section above
+
 ## Search
 * `Quickselect` is a textbook algorithm typically used to solve the problems "find kth something": kth smallest, kth largest, kth most frequent, kth less frequent, etc. It has `O(N)` average time complexity and widely used in practice. It worth to note that its worth case time complexity is O(N<sup>2</sup>), although the probability of this worst-case is negligible. The approach is the same as for quicksort.
 
@@ -93,6 +117,7 @@ If that were a quicksort algorithm, one would have to process both parts of the 
 * Recursion will never be `O(1)` space complexity because a stack is involved, unless there is tail call optimization (TCO).
 
 ## Backtracking
+* If we need to try all combinations(or permutations) of the input, we can either use `recursive backtracking` or `iterative BFS`.
 ### Steps to solve a backtracking problem (2D board)
 * Calculate height and width of the 2D matrix.
 * Define a helper function which takes row, column and current parameter e.g., `currIndex`
@@ -121,7 +146,8 @@ If that were a quicksort algorithm, one would have to process both parts of the 
 ## Tree
 * https://leetcode.com/articles/a-recursive-approach-to-segment-trees-range-sum-queries-lazy-propagation/#
 * In-order traversal of a binary tree is insufficient to uniquely serialize a tree. Pre-order or post-order traversal is also required.
-* When a question involves a BST, the interviewer is usually looking for a solution which runs faster than O(n).
+* When a question involves a BST, the interviewer is usually looking for a solution which runs faster than `O(n)`.
+*  In any `preorder` traversal sequence, the first key corresponds to the root. The subsequence which begins at the second element and ends at the last key less than the root, corresponds to the preorder traversal of the root's left subtree. The final subsequence, consisting of keys greater than the root corresponds to the preorder traversal of the root's right subtree. We recursively reconstruct the BST by recursively reconstructing the left and right subtrees from the two subsequences then adding them to the root.
 
 ## Graphs
 https://leetcode.com/discuss/general-discussion/655708/graph-for-beginners-problems-pattern-sample-solutions/562734
@@ -162,15 +188,3 @@ var numIslands = function(grid) {
 
 ## BFS
 * Try to implement the solution incrementally when generating combinations problems. e.g., phone letter pad combinations, generate parentheses.
-
-## Trie
-* Common data structures for looking up strings efficiently are
-  * Trie/Prefix Tree
-  * Suffix Tree
-* Tries are special trees (prefix trees) that make searching and storing strings more efficient. Tries have many practical applications, such as conducting searches and providing autocomplete. It is helpful to know these common applications so that you can easily identify when a problem can be efficiently solved using a trie.
-* Sometimes preprocessing a dictionary of words (given in a list) into a trie, will improve the efficiency of searching for a word of length k, among n words. Searching becomes O(k) instead of O(n).
-
-## Heap
-* If you see a top or lowest k mentioned in the question, it is usually a sign that a heap can be used to solve the problem.
-* If you require the top k elements, use a Min Heap of size k. Iterate through each element, pushing it into the heap. Whenever the heap size exceeds k, remove the minimum element. That will guarantee that you have the k largest elements.
-* You can also use `quickselect` algorithm to find kth-any element. Refer the `Search` section above
