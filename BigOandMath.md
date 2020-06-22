@@ -31,6 +31,16 @@
 
 # Basic math for coding interviews
 
+* Binary sum
+```javascript
+  Truth Table
+  1st + 2nd + carry = sum, new carry, decimal sum
+  0 +  0  + 0 = 0, 0 (0)
+  0 +  0  + 1 = 1, 0 (1)
+  0 +  1  + 1 = 0, 1 (2)
+  1 +  1  + 1 = 1, 1 (3)
+```
+
 ## Permutations & Combinations [reference](https://www.mathsisfun.com/combinatorics/combinations-permutations.html)
 
 * When the order doesn't matter, it is a `Combination`. When the order does matter it is a `Permutation`.
