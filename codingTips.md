@@ -80,10 +80,14 @@ s = s.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
     int[128] for ASCII
     int[256] for Extended ASCII
 ```
-* To convert a char to number, use + prefix.
+* To convert a char to number, use + prefix or subtract '0' from char.
 ```javascript
 let str = '100';
-+str[0] //outputs 1 instead of '1'
++str[0]; //outputs 1 instead of '1'
+
+or
+
+str[0] - '0'; //outputs 1 instead of '1'
 ```
 
 ## Linked List
