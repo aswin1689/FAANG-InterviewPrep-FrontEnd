@@ -129,6 +129,17 @@ str[0] - '0'; //outputs 1 instead of '1'
 </details>
 
 * In BFS, when using queue, if you want the length of each level, declare a second variable that holds the `size` of that level and decrement the variable on each iteration. 
+* The function below is used to get height of a tree. This can be helpful while solving many problems. e.g., Smallest Subtree with all the Deepest Nodes
+<details>
+  <summary>Height of a tree</summary>
+  
+  ```javascript
+  function getHeight(node) {
+      if(!node) return 0;
+      return 1 + Math.max(getHeight(node.left), getHeight(node.right));
+  }
+  ```
+</details>
 
 ## Graph
 There are two primary ways of representing graph:
