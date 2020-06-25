@@ -8,12 +8,12 @@
 
 ### Inputs
 When a problem is given to you,
-* For String problems, check for empty strings, white spaces, case sensitiveness, unique values, UTF charset 128 or 256, special characters.
-* For Arrays, check if array is sorted, has duplicate values, # of times duplicates matter or not, has -ve values empty arrays.
-* For Numbers, if number can be greater than 2^31, negative numbers allowed or not.
-* For Linked lists, duplicate nodes exist or not, has atleast two nodes, ask if n is always valid,
-* For Trees, if BST, can there be nodes with same value. 
-* For BST, trial with all approaches you can think of if you don't know how to start/given an unknown problem. For example, check with stack, queue, BFS, DFS, pre-order, in-order, post-order, reverse pre-order, range sum queries, upper and lower bounds.
+* For **String** problems, check for empty strings, white spaces, case sensitiveness, unique values, UTF charset 128 or 256, special characters. For find substring  in another string problems, check if it occurs only once in the other string, are chars in input string unique, what should be returned when there is no answer? eg., [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)
+* For **Arrays**, check if array is sorted, has duplicate values, # of times duplicates matter or not, has -ve values empty arrays.
+* For **Numbers**, if number can be greater than 2^31, negative numbers allowed or not.
+* For **Linked lists**, duplicate nodes exist or not, has atleast two nodes, ask if n is always valid,
+* For **Trees**, if BST, can there be nodes with same value. 
+* For **BST**, trial with all approaches you can think of if you don't know how to start/given an unknown problem. For example, check with stack, queue, BFS, DFS, pre-order, in-order, post-order, reverse pre-order, range sum queries, upper and lower bounds.
 * `In-place` does not mean *"without creating any additional variables!"* Rather, it means *"without creating a new copy of the input."* In general, an in-place function will only create additional variables that are `O(1)` space.
     * **Working in-place is a good way to save time and space.** An in-place algorithm avoids the cost of initializing or copying data structures, and it usually has an O(1) space cost.
     * **But be careful: an in-place algorithm can cause side effects.** Your input is "destroyed" or "altered," which can affect code *outside* of your function. For example:
@@ -54,6 +54,16 @@ When a problem is given to you,
 * For substrings, you can terminate early once there is no match. For subsequences, use dynamic programming as there are overlapping subproblems. 
 * sliding window - find all anagrams
 * If we need to find substring among set of strings, we use `hashmap` or `trie`.
+* For most substring problem, we are given a string and need to find a substring of it which satisfy some restrictions. A general way is to use a `hashmap` assisted with `two pointers`.
+<details>
+   <summary>algorithm to solve substring problems</summary>
+   
+   ```javascript
+   1. Use two pointers: start and end to represent a window.
+   2. Move end to find a valid window.
+   3. When a valid window is found, move start to find a smaller window.
+   ```
+</details>
 
 ## Stack
 * For parenthesis matching problems, consider `stack`. e.g.,
