@@ -80,6 +80,17 @@ s = s.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
     int[128] for ASCII
     int[256] for Extended ASCII
 ```
+<details>
+  <summary>Code to initialize charset</summary>
+  
+  ```javascript
+    let dict = new Array(128).fill(0)
+    for (var i = 0; i < t.length; i++) {
+      map[t.charCodeAt(i)] += 1
+    }
+  ```
+</details>
+
 * To convert a char to number, use + prefix or subtract '0' from char.
 ```javascript
 let str = '100';
@@ -346,6 +357,11 @@ let a = 1, b = 2;
 * In contrast to the **break** statement, continue does not terminate the execution of the loop entirely: instead,
     * In a ```while``` loop, it jumps back to the condition.
     * In a ```for``` loop, it jumps to the update expression.
+* The **`Number.MAX_SAFE_INTEGER`** constant represents the maximum safe integer in JavaScript (2<sup>53</sup> - 1).
+```javascript
+console.log(Number.MAX_SAFE_INTEGER);
+// expected output: 9007199254740991
+```
 
 ## Map
 * Map maintains insertion order while iterating. 
@@ -356,6 +372,9 @@ let a = 1, b = 2;
 map.forEach((val, key, map) => {...})
 ```
 * Performs better in scenarios involving frequent additions and removals of key-value pairs. `Objects` are not optimized for this scenario.
-
+* checking if a value exists in a map and initializing a value can be done in one statement like below:
+```javascript
+map.set(c, map.get(c) + 1 || 1)
+```
 
 ## Set
