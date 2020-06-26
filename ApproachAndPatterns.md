@@ -8,7 +8,7 @@
 
 ### Inputs
 When a problem is given to you,
-* For **String** problems, check for empty strings, white spaces, case sensitiveness, unique values, UTF charset 128 or 256, special characters. For find substring  in another string problems, check if it occurs only once in the other string, are chars in input string unique, what should be returned when there is no answer? eg., [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)
+* For **String** problems, check for empty strings, white spaces, case sensitiveness, unique values, UTF charset 128 or 256, special characters.
 * For **Arrays**, check if array is sorted, has duplicate values, # of times duplicates matter or not, has -ve values empty arrays.
 * For **Numbers**, if number can be greater than 2^31, negative numbers allowed or not.
 * For **Linked lists**, duplicate nodes exist or not, has atleast two nodes, ask if n is always valid,
@@ -45,7 +45,24 @@ When a problem is given to you,
 * Two pointer technique - It is less buggy because you don't have to consider odd and even length string scenario. e.g., move zeroes, reverse String.
 * For merge intervals problems, consider two point technique.
 * Try `reversing`, `transposing` 2D matrix as an option e.g., Rotating a 2D matrix
-* sliding window techinque
+* sliding window techinque - have `start` and `end` pointers. move `end` pointer till you get desired window and then move `start` pointer to contract the window to check if smaller window solution can be obtained.
+* Try to find O(N) solution for sub-array problems. e.g., [max subarray sum](https://leetcode.com/problems/maximum-subarray/)
+<details>
+	<summary>example with running sum</summary>
+
+```javascript
+var maxSubArray = function(nums) {
+ let prev = 0;
+ let max = -Infinity;
+
+ for (let i = 0; i < nums.length; i++) {
+     prev = Math.max(prev + nums[i], nums[i]);
+     max = Math.max(max, prev);
+ }
+ return max;
+};
+```
+</details>
 
 ## String
 * Two pointer technique - palindrome
@@ -64,6 +81,8 @@ When a problem is given to you,
    3. When a valid window is found, move start to find a smaller window.
    ```
 </details>
+
+* For find substring in another string problems, check if it occurs only once in the other string, are chars in input string unique, what should be returned when there is no answer? eg., [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)
 
 ## Stack
 * For parenthesis matching problems, consider `stack`. e.g.,
