@@ -66,11 +66,9 @@ var maxSubArray = function(nums) {
 
 ## String
 * Two pointer technique - palindrome
-* If the order of characters within the string matters, so HashMaps are usually not helpful.
+* If the order of characters within the string matters, `HashMaps` are usually not helpful.
 * When a question is about counting the number of palindromes, a common trick is to have two pointers that move outward, away from the middle. Note that palindromes can be even or odd length. For each middle pivot position, you need to check it twice: Once that includes the character and once without the character.
 * For substrings, you can terminate early once there is no match. For subsequences, use dynamic programming as there are overlapping subproblems. 
-* sliding window - find all anagrams
-* If we need to find substring among set of strings, we use `hashmap` or `trie`.
 * For most substring problem, we are given a string and need to find a substring of it which satisfy some restrictions. A general way is to use a `hashmap` assisted with `two pointers`.
 <details>
    <summary>algorithm to solve substring problems</summary>
@@ -82,7 +80,70 @@ var maxSubArray = function(nums) {
    ```
 </details>
 
-* For find substring in another string problems, check if it occurs only once in the other string, are chars in input string unique, what should be returned when there is no answer? eg., [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)
+* For substring problems, check if target occurs only once in the source string, are chars in target string unique, what should be returned when there is no answer? [Leetcode discuss](https://leetcode.com/problems/find-all-anagrams-in-a-string/discuss/92007/Sliding-Window-algorithm-template-to-solve-all-the-Leetcode-substring-search-problem.)
+* There is a template to solve similar substring problems which can be solved with **sliding window technique**
+<details>
+<summary>Steps to solve substring problems</summary>
+
+* Add **string length checks** and return `false` or whatever is required
+* **Declare** `hashmap`, `start` and `end` pointers, `result` string/array, `counter` variable of target string map size.
+* **Initialize a hashmap** of target string. assign its size to counter.
+* **Loop through source string** while end pointer is less than source string length;
+* **Check for target string chars** in source string and deduct their count in map, decrement counter and increment end pointer.
+* If **counter is zero**, perform necessary checks like adding result to array/updating min length of result.
+* **Increment start pointer** to contract the window. Add start character to map to find the new window.
+* **Return `result`** at the end.
+</details>
+
+<details>
+	<summary>Minimum window substring problem</summary>
+
+```javascript
+ /**
+ * @param {string} s
+ * @param {string} t
+ * @return {string}
+ */
+var minWindow = function(s, t) {
+    if(!s.length || !t.length) return '';
+    
+    let min = Infinity;
+    let res = '';
+    let start = 0, end = 0;
+    let map = new Map();
+
+    for(let i = 0; i< t.length; i++) {
+        let c = t[i];
+        map.set(c, map.get(c) + 1 || 1)
+    }
+    let counter = map.size;
+
+    while(end < s.length) {
+        let c = s[end];
+        if(map.has(c)) {
+            map.set(c, map.get(c) - 1);
+            if(map.get(c) == 0) counter--;
+        }
+        end++;
+        while(counter == 0) {
+	// doing the below step to add the curr char (if it exists in our target char list) to required list, since we are changing the size of window.
+            let c1 = s[start];
+            if(map.has(c1)) { 
+                map.set(c1, map.get(c1) + 1);
+                if(map.get(c1) > 0) counter++;
+            }
+            if(end - start < min) {
+                res = s.substring(start, end);
+                min = end - start;
+            }
+            start++;
+        }
+    }
+    return res;
+};
+```
+</details>
+
 
 ## Stack
 * For parenthesis matching problems, consider `stack`. e.g.,
@@ -137,7 +198,7 @@ var maxSubArray = function(nums) {
 As an output, we have an array where the pivot is on its perfect position in the ascending sorted array, sorted by the frequency. All elements on the left of the pivot are less frequent than the pivot, and all elements on the right are more frequent or have the same frequency.
 
 Hence the array is now split into two parts. If by chance our pivot element took `N - k`th final position, then `k` elements on the right are these top `k` frequent we're looking for. If not, we can choose one more pivot and place it in its perfect position. 
-![quickselect](https://leetcode.com/articles/Figures/347_rewrite/hoare.png)
+<img src="https://leetcode.com/articles/Figures/347_rewrite/hoare.png" width="650"/> \
 If that were a quicksort algorithm, one would have to process both parts of the array. That would result in `O(N log⁡N)` time complexity. In this case, there is no need to deal with both parts since one knows in which part to search for N - kth less frequent element, and that reduces the average time complexity to `O(N)`.
 * To find kth-smallest use k and to find kth-largest, use `N - k` where N is # of numbers.
 
