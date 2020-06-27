@@ -101,6 +101,13 @@ or
 str[0] - '0'; //outputs 1 instead of '1'
 ```
 
+* For string parantheses matching problems, do these checks.
+  * if string's is odd, return false.
+  * Do this check for open parantheses likewise. You can have an array of open brackets too, but `string.includes` is concise.
+  ```javascript
+  '{[('.includes(currChar)
+  ```
+
 ## Linked List
 
 ## Hashmap
