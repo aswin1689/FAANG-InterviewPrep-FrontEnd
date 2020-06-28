@@ -369,6 +369,18 @@ let a = 1, b = 2;
 console.log(Number.MAX_SAFE_INTEGER);
 // expected output: 9007199254740991
 ```
+* If we have two for loops and we want to break outer loop from inner loop, we can do the below: 
+```javascript
+outerLoop: for (let i = 0; i < row; i++) {
+        for (let j = 0; j < col; j++) {
+            const item = A[i][j];
+            if (item === 1) {
+                dfs(i, j, queue);
+                break outerLoop;
+            }
+        }
+    }
+```
 
 ## Map
 * Map maintains insertion order while iterating. 
