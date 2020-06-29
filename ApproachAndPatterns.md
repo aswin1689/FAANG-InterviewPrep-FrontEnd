@@ -45,6 +45,7 @@ When a problem is given to you,
 * Two pointer technique - It is less buggy because you don't have to consider odd and even length string scenario. e.g., move zeroes, reverse String.
 * For merge intervals problems, consider two point technique.
 * Try `reversing`, `transposing` 2D matrix as an option e.g., Rotating a 2D matrix
+* In 2D matrix problems, there can be situations where you `X`s and `O`s and you need a temp value for the cell like `*`. e.g., [Surrounded Regions](https://leetcode.com/problems/surrounded-regions/)
 * sliding window techinque - have `start` and `end` pointers. move `end` pointer till you get desired window and then move `start` pointer to contract the window to check if smaller window solution can be obtained.
 * Try to find O(N) solution for sub-array problems. e.g., [max subarray sum](https://leetcode.com/problems/maximum-subarray/)
 <details>
