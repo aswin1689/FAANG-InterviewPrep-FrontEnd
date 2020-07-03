@@ -59,6 +59,16 @@ for(let i = 0, len = arr.length; i < len; i++) {
 ```javascript
 Array.isArray(input)
 ```
+* To get last k elements in an array, use
+```javascript
+const nums = [1,2,3,4,5,6,7];
+console.log(nums.splice(-3))
+// expected output: Array [5, 6, 7]
+```
+The above snippet can be used in rotating an array
+```javascript
+return nums.splice(0,0,...nums.splice(nums.length - k))
+```
 
 ## String
 
