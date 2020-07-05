@@ -202,6 +202,47 @@ Hence the array is now split into two parts. If by chance our pivot element took
 <img src="https://leetcode.com/articles/Figures/347_rewrite/hoare.png" width="650"/> \
 If that were a quicksort algorithm, one would have to process both parts of the array. That would result in `O(N log⁡N)` time complexity. In this case, there is no need to deal with both parts since one knows in which part to search for N - kth less frequent element, and that reduces the average time complexity to `O(N)`.
 * To find kth-smallest use k and to find kth-largest, use `N - k` where N is # of numbers.
+<details>
+	<summary>Kth largest element in array code sample with quick select</summary>
+
+```javascript
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number}
+ */
+var findKthLargest = function(nums, k) {
+    function getpartition(list, left, right) {
+	let pivot = list[right];
+	let pivotIndex = left;
+
+	for(let i = left; i <= right; i++) {
+	    if(list[i] < pivot) {
+		[list[i], list[pivotIndex]] = [list[pivotIndex], list[i]];
+		pivotIndex++;
+	    }
+	}
+
+	[list[pivotIndex], list[right]] = [list[right], list[pivotIndex]];
+	return pivotIndex;
+    }
+
+    function quickselect(list, left, right, k) {
+	let partition = getpartition(list, left, right);
+
+	if(partition === k) return list[k];
+
+	else if(partition < k) {
+	    return quickselect(list, partition+1, right, k)
+	} else {
+	    return quickselect(list, left, partition-1, k)
+	}
+    }
+
+    return quickselect(nums, 0, nums.length-1, nums.length-k)
+};
+```
+</details>
 
 ## Recursion
 * Recursion implicitly uses a stack. Hence all recursive approaches can be rewritten iteratively using a stack. Beware of cases where the recursion level goes too deep and causes a stack overflow.
