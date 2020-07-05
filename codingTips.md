@@ -317,7 +317,12 @@ Graph.prototype.dfsIterative = function(start) {
 </details>
 
 ## Sort
-* Merge Sort
+* When asked to return k closest points to origin by euclidean distance, we don't need to calculate square root of the points. Squared length is enough. `Quick select` can be used here to find any k-th smallest/largest questions. The idea is that if we `quickselect` by some pivot, on average in linear time we'll reduce the problem to a problem of half the size.
+```javascript
+var getLength = function([a, b]) {
+    return (a * a) + (b * b);
+}
+```
 
 ## Backtracking
 * An algorithmic-technique for solving problems by trying to build a solution incrementally, one piece at a time, removing those solutions that fail to satisfy the constraints of the problem.
