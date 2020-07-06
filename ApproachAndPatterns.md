@@ -65,6 +65,8 @@ var maxSubArray = function(nums) {
 ```
 </details>
 
+* Try drawing on the board/editor the output we are trying to achieve step by step and this will help you to visualize the solution. e.g., [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/). If you list out the output for each cell, the solution can be visualized as getting the product of all left elements and all right elements of a cell.
+
 ## String
 * Two pointer technique - palindrome
 * If the order of characters within the string matters, `HashMaps` are usually not helpful.
