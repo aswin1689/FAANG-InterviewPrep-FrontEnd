@@ -25,6 +25,7 @@
 * Subsets: 2^N, since each element could be absent or present. https://leetcode.com/articles/subsets/#
 * Logarithmic time is always base 2. So, when we say `log N`, it actually means log<sub>2</sub>N
 * Time complexity to find all subarrays of an array is O(N<sup>2</sup>).
+* Considering every possible subarray takes O(N<sup>2</sup>) time. For each of the subarray we calculate the sum taking O(n) time in the worst case, taking a total of O(N<sup>3</sup>) time.
 
 ## Space Complexity
 * If you need to keep a counter of characters, a common mistake is to say that the space complexity required for the counter is `O(n)`. The space required for a counter is `O(1)` not `O(n)`. This is because the upper bound is the range of characters, which is usually a fixed constant of 26. The input set is just lowercase Latin characters. e.g., Frequency counting of characters will help to determine if two strings are anagrams. This also takes `O(n)` time and `O(1)` space.
