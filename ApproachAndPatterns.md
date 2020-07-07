@@ -66,6 +66,7 @@ var maxSubArray = function(nums) {
 </details>
 
 * Try drawing on the board/editor the output we are trying to achieve step by step and this will help you to visualize the solution. e.g., [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/). If you list out the output for each cell, the solution can be visualized as getting the product of all left elements and all right elements of a cell.
+* If the cumulative sum(represented by `sum[i]` for sum upto `i`th index) upto two indices is the same, the sum of the elements lying in between those indices is `zero`. Extending the same thought further, if the cumulative sum upto two indices, say i and j is at a difference of k i.e. if `sum[i] − sum[j] = k`, the sum of elements lying between indices i and j is k. We can use this approach when asked for sub-array sums.
 
 ## String
 * Two pointer technique - palindrome
