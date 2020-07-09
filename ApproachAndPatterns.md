@@ -67,6 +67,9 @@ var maxSubArray = function(nums) {
 
 * Try drawing on the board/editor the output we are trying to achieve step by step and this will help you to visualize the solution. e.g., [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/). If you list out the output for each cell, the solution can be visualized as getting the product of all left elements and all right elements of a cell.
 * If the cumulative sum(represented by `sum[i]` for sum upto `i`th index) upto two indices is the same, the sum of the elements lying in between those indices is `zero`. Extending the same thought further, if the cumulative sum upto two indices, say i and j is at a difference of k i.e. if `sum[i] − sum[j] = k`, the sum of elements lying between indices i and j is k. We can use this approach when asked for sub-array sums.
+* Find duplicate in an array without additional space can be solved by thinking along the lines of a linked list. In the array below, draw next pointer to the position of value in current position. If two nodes have the same value, their next pointers will point to the same node! So, if we can find a node with two incoming next pointers, we know the position of that node is a duplicate integer in our array. If we can do this in a constant number of walks through our array, we can find a duplicate value in `O(n)` time.
+<img src="https://www.interviewcake.com/images/svgs/space_edition__orange_highlighted_position_2__array.svg?bust=206" />
+<img src="https://www.interviewcake.com/images/svgs/space_edition__blue_array_position_linked_list__array.svg?bust=206" />
 
 ## String
 * Two pointer technique - palindrome
